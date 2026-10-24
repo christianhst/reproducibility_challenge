@@ -4,3 +4,7 @@ mymat_raw/
 .venv/
 .DS_Store
 .python-version
+results/
+__pycache__/
+A_ShallowConvNet/
+logs_shallownet/
