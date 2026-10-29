@@ -1,0 +1,124 @@
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1          [-1, 40, 22, 976]           1,040
+            Conv2d-2           [-1, 40, 1, 976]          35,240
+       BatchNorm2d-3           [-1, 40, 1, 976]              80
+               ELU-4           [-1, 40, 1, 976]               0
+         AvgPool2d-5            [-1, 40, 1, 61]               0
+           Dropout-6            [-1, 40, 1, 61]               0
+           Flatten-7                 [-1, 2440]               0
+            Linear-8                    [-1, 4]           9,764
+================================================================
+Total params: 46,124
+Trainable params: 46,124
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.08
+Forward/backward pass size (MB): 7.50
+Params size (MB): 0.18
+Estimated Total Size (MB): 7.76
+----------------------------------------------------------------
+Fri Oct 23 18:16:59 2026
+seed is 1824
+Subject 1
+-------------------- train size： (288, 1, 22, 1000) test size： (288, 22, 1000)
+1_0 train_acc: 0.3933 train_loss: 1.254124	val_acc: 0.450980 val_loss: 1.2354932
+1_1 train_acc: 0.4906 train_loss: 1.177510	val_acc: 0.558824 val_loss: 1.1726816
+1_2 train_acc: 0.6217 train_loss: 0.961500	val_acc: 0.539216 val_loss: 1.0861846
+1_3 train_acc: 0.6255 train_loss: 0.967419	val_acc: 0.622549 val_loss: 1.0001619
+1_4 train_acc: 0.6554 train_loss: 0.844381	val_acc: 0.617647 val_loss: 0.9154834
+1_5 train_acc: 0.7228 train_loss: 0.774291	val_acc: 0.676471 val_loss: 0.8381988
+1_6 train_acc: 0.6667 train_loss: 0.847503	val_acc: 0.666667 val_loss: 0.8249649
+1_7 train_acc: 0.7154 train_loss: 0.742662	val_acc: 0.700980 val_loss: 0.7743900
+1_8 train_acc: 0.7828 train_loss: 0.654770	val_acc: 0.715686 val_loss: 0.6877403
+1_9 train_acc: 0.7453 train_loss: 0.703233	val_acc: 0.784314 val_loss: 0.6434482
+1_10 train_acc: 0.7079 train_loss: 0.694257	val_acc: 0.769608 val_loss: 0.6062990
+1_13 train_acc: 0.8539 train_loss: 0.455101	val_acc: 0.813725 val_loss: 0.5181141
+1_16 train_acc: 0.8277 train_loss: 0.480817	val_acc: 0.818627 val_loss: 0.4940141
+1_18 train_acc: 0.8502 train_loss: 0.417504	val_acc: 0.833333 val_loss: 0.4879423
+1_19 train_acc: 0.8090 train_loss: 0.473429	val_acc: 0.857843 val_loss: 0.4638298
+1_20 train_acc: 0.8727 train_loss: 0.398072	val_acc: 0.892157 val_loss: 0.4335218
+1_21 train_acc: 0.8315 train_loss: 0.449200	val_acc: 0.872549 val_loss: 0.4196279
+1_22 train_acc: 0.9139 train_loss: 0.304418	val_acc: 0.877451 val_loss: 0.3896216
+1_23 train_acc: 0.9064 train_loss: 0.304519	val_acc: 0.916667 val_loss: 0.3294679
+1_28 train_acc: 0.9026 train_loss: 0.315625	val_acc: 0.901961 val_loss: 0.2936226
+1_30 train_acc: 0.9251 train_loss: 0.261263	val_acc: 0.931373 val_loss: 0.2595851
+1_32 train_acc: 0.9288 train_loss: 0.260469	val_acc: 0.926471 val_loss: 0.2567858
+1_33 train_acc: 0.9176 train_loss: 0.229718	val_acc: 0.926471 val_loss: 0.2541741
+1_34 train_acc: 0.9064 train_loss: 0.269367	val_acc: 0.926471 val_loss: 0.2263119
+1_36 train_acc: 0.9213 train_loss: 0.231704	val_acc: 0.950980 val_loss: 0.1790765
+1_39 train_acc: 0.9438 train_loss: 0.177295	val_acc: 0.960784 val_loss: 0.1698917
+1_41 train_acc: 0.9363 train_loss: 0.184297	val_acc: 0.960784 val_loss: 0.1602560
+1_42 train_acc: 0.9551 train_loss: 0.152548	val_acc: 0.965686 val_loss: 0.1442306
+1_48 train_acc: 0.9588 train_loss: 0.134988	val_acc: 0.975490 val_loss: 0.1339707
+1_50 train_acc: 0.9625 train_loss: 0.150534	val_acc: 0.960784 val_loss: 0.1243520
+1_53 train_acc: 0.9438 train_loss: 0.148716	val_acc: 0.985294 val_loss: 0.1124358
+1_55 train_acc: 0.9625 train_loss: 0.103470	val_acc: 0.980392 val_loss: 0.0878742
+1_63 train_acc: 0.9663 train_loss: 0.086360	val_acc: 0.985294 val_loss: 0.0763973
+1_65 train_acc: 0.9438 train_loss: 0.147741	val_acc: 0.990196 val_loss: 0.0647374
+1_67 train_acc: 0.9963 train_loss: 0.055015	val_acc: 0.990196 val_loss: 0.0645714
+1_70 train_acc: 0.9775 train_loss: 0.079929	val_acc: 0.995098 val_loss: 0.0587114
+1_77 train_acc: 0.9813 train_loss: 0.068758	val_acc: 1.000000 val_loss: 0.0537146
+1_79 train_acc: 0.9888 train_loss: 0.054358	val_acc: 1.000000 val_loss: 0.0458985
+1_82 train_acc: 0.9888 train_loss: 0.066214	val_acc: 0.995098 val_loss: 0.0422571
+1_86 train_acc: 0.9925 train_loss: 0.050323	val_acc: 0.995098 val_loss: 0.0406429
+1_88 train_acc: 1.0000 train_loss: 0.046638	val_acc: 1.000000 val_loss: 0.0329713
+1_96 train_acc: 0.9888 train_loss: 0.041927	val_acc: 1.000000 val_loss: 0.0319701
+1_99 train_acc: 0.9775 train_loss: 0.058946	val_acc: 1.000000 val_loss: 0.0243218
+1_116 train_acc: 0.9850 train_loss: 0.043538	val_acc: 1.000000 val_loss: 0.0202039
+1_119 train_acc: 0.9925 train_loss: 0.039028	val_acc: 1.000000 val_loss: 0.0187068
+1_122 train_acc: 0.9925 train_loss: 0.041486	val_acc: 1.000000 val_loss: 0.0162890
+1_133 train_acc: 0.9850 train_loss: 0.053278	val_acc: 1.000000 val_loss: 0.0136650
+1_138 train_acc: 0.9925 train_loss: 0.035961	val_acc: 1.000000 val_loss: 0.0134321
+1_143 train_acc: 0.9963 train_loss: 0.034551	val_acc: 1.000000 val_loss: 0.0132692
+1_154 train_acc: 0.9888 train_loss: 0.027316	val_acc: 1.000000 val_loss: 0.0108941
+1_175 train_acc: 1.0000 train_loss: 0.029747	val_acc: 1.000000 val_loss: 0.0101934
+1_185 train_acc: 0.9925 train_loss: 0.018806	val_acc: 1.000000 val_loss: 0.0100365
+1_190 train_acc: 0.9963 train_loss: 0.022085	val_acc: 1.000000 val_loss: 0.0096356
+1_191 train_acc: 0.9888 train_loss: 0.030265	val_acc: 1.000000 val_loss: 0.0087219
+1_192 train_acc: 0.9888 train_loss: 0.034749	val_acc: 1.000000 val_loss: 0.0071273
+1_198 train_acc: 0.9963 train_loss: 0.014495	val_acc: 1.000000 val_loss: 0.0063848
+1_203 train_acc: 0.9925 train_loss: 0.017389	val_acc: 1.000000 val_loss: 0.0061059
+1_246 train_acc: 0.9888 train_loss: 0.023732	val_acc: 1.000000 val_loss: 0.0059276
+1_247 train_acc: 0.9963 train_loss: 0.017473	val_acc: 1.000000 val_loss: 0.0052055
+1_252 train_acc: 0.9925 train_loss: 0.021786	val_acc: 1.000000 val_loss: 0.0049042
+1_258 train_acc: 1.0000 train_loss: 0.011619	val_acc: 1.000000 val_loss: 0.0036543
+1_279 train_acc: 0.9963 train_loss: 0.011662	val_acc: 1.000000 val_loss: 0.0030248
+1_325 train_acc: 0.9963 train_loss: 0.017798	val_acc: 1.000000 val_loss: 0.0027855
+1_330 train_acc: 1.0000 train_loss: 0.015243	val_acc: 1.000000 val_loss: 0.0023106
+1_347 train_acc: 1.0000 train_loss: 0.008052	val_acc: 1.000000 val_loss: 0.0017800
+1_381 train_acc: 0.9963 train_loss: 0.009399	val_acc: 1.000000 val_loss: 0.0017096
+1_382 train_acc: 1.0000 train_loss: 0.005547	val_acc: 1.000000 val_loss: 0.0015669
+1_421 train_acc: 1.0000 train_loss: 0.009583	val_acc: 1.000000 val_loss: 0.0015438
+1_428 train_acc: 0.9963 train_loss: 0.011763	val_acc: 1.000000 val_loss: 0.0013757
+1_457 train_acc: 0.9963 train_loss: 0.011053	val_acc: 1.000000 val_loss: 0.0013296
+1_477 train_acc: 0.9963 train_loss: 0.006107	val_acc: 1.000000 val_loss: 0.0011006
+1_533 train_acc: 1.0000 train_loss: 0.005756	val_acc: 1.000000 val_loss: 0.0006489
+1_621 train_acc: 1.0000 train_loss: 0.001321	val_acc: 1.000000 val_loss: 0.0006193
+1_622 train_acc: 1.0000 train_loss: 0.002584	val_acc: 1.000000 val_loss: 0.0005149
+1_623 train_acc: 0.9963 train_loss: 0.004272	val_acc: 1.000000 val_loss: 0.0004470
+1_750 train_acc: 1.0000 train_loss: 0.003648	val_acc: 1.000000 val_loss: 0.0003940
+1_751 train_acc: 1.0000 train_loss: 0.002477	val_acc: 1.000000 val_loss: 0.0003583
+1_774 train_acc: 1.0000 train_loss: 0.002556	val_acc: 1.000000 val_loss: 0.0003402
+1_779 train_acc: 1.0000 train_loss: 0.002863	val_acc: 1.000000 val_loss: 0.0003154
+1_780 train_acc: 1.0000 train_loss: 0.001235	val_acc: 1.000000 val_loss: 0.0003015
+1_794 train_acc: 1.0000 train_loss: 0.001506	val_acc: 1.000000 val_loss: 0.0002454
+1_882 train_acc: 1.0000 train_loss: 0.004707	val_acc: 1.000000 val_loss: 0.0002248
+1_883 train_acc: 1.0000 train_loss: 0.000810	val_acc: 1.000000 val_loss: 0.0002210
+1_965 train_acc: 1.0000 train_loss: 0.003320	val_acc: 1.000000 val_loss: 0.0002180
+1_976 train_acc: 1.0000 train_loss: 0.003139	val_acc: 1.000000 val_loss: 0.0002166
+1_989 train_acc: 0.9963 train_loss: 0.004494	val_acc: 1.000000 val_loss: 0.0001494
+epoch:  989 	The test accuracy is: 0.8298611111111112
+ THE BEST ACCURACY IS 0.8298611111111112	kappa is 0.7731481481481481
+subject 1 duration: 0:27:23.673400
+**The average Best accuracy is: 82.98611111111111kappa is: 77.31481481481481
+
+best epochs:  [989]
+---------  all result  ---------
+        accuray  precision     recall         f1      kappa
+0     82.986111   84.35848  82.986111  82.711707  77.314815
+mean  82.986111   84.35848  82.986111  82.711707  77.314815
+std         NaN        NaN        NaN        NaN        NaN
+****************************************
+Fri Oct 23 18:44:23 2026
