@@ -5,8 +5,9 @@ fine-tunes by author: zhaowei701@163.com
 
 """
 
+import argparse
 import os
-gpus = [1]
+gpus = []  # CPU-only reproduction runs
 import numpy as np
 import pandas as pd
 import random
@@ -249,7 +250,7 @@ class ExP():
                  epochs=2000, 
                  number_aug=2,
                  number_seg=8, 
-                 gpus=[0], 
+                 gpus=None,
                  evaluate_mode = 'subject-dependent',
                  heads=4, 
                  emb_size=40,
@@ -263,6 +264,7 @@ class ExP():
                  eeg1_dropout_rate = 0.3,
                  flatten_eeg1 = 600, 
                  validate_ratio = 0.2,
+                 validation_version = 'validation_1',
                  learning_rate = 0.001,
                  batch_size = 72,  
                  ):
@@ -284,6 +286,7 @@ class ExP():
         self.result_name = result_name
         self.evaluate_mode = evaluate_mode
         self.validate_ratio = validate_ratio
+        self.validation_version = validation_version
 
         self.Tensor = torch.FloatTensor
         self.LongTensor = torch.LongTensor
@@ -432,8 +435,15 @@ class ExP():
                 train_data = img[:-number_validate]
                 train_label = label[:-number_validate]
                 
-                val_data_list.append(img[number_validate:])
-                val_label_list.append(label[number_validate:])
+                if self.validation_version == 'validation_1':
+                    # Preserve the published notebook behavior: this slice
+                    # overlaps with train_data and contains 70% of the batch.
+                    val_data_list.append(img[number_validate:])
+                    val_label_list.append(label[number_validate:])
+                else:
+                    # Corrected 70/30 split with no train/validation overlap.
+                    val_data_list.append(img[-number_validate:])
+                    val_label_list.append(label[-number_validate:])
                 
                 # real train dataset
                 img = Variable(train_data.type(self.Tensor))
@@ -564,7 +574,8 @@ def main(dirs,
          eeg1_pooling_size2=8,# p2
          eeg1_dropout_rate=0.3,
          flatten_eeg1=600,   
-         validate_ratio = 0.2
+         validate_ratio = 0.2,
+         validation_version = 'validation_1'
          ):
 
     if not os.path.exists(dirs):
@@ -603,7 +614,8 @@ def main(dirs,
                   eeg1_pooling_size2 = eeg1_pooling_size2,
                   eeg1_dropout_rate = eeg1_dropout_rate,
                   flatten_eeg1 = flatten_eeg1,  
-                  validate_ratio = validate_ratio
+                  validate_ratio = validate_ratio,
+                  validation_version = validation_version
                   )
 
         testAcc, Y_true, Y_pred, df_process, best_epoch = exp.train()
@@ -665,6 +677,15 @@ def main(dirs,
     return result_metric_dict
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Reproduce the Conformer A01 training run.')
+    parser.add_argument(
+        '--validation-version',
+        choices=('validation_1', 'validation_2'),
+        default='validation_1',
+        help='validation_1 preserves the notebook overlap; validation_2 uses a disjoint 70/30 split.',
+    )
+    args = parser.parse_args()
+
     #----------------------------------------
     DATA_DIR = os.path.join(REPO_ROOT, 'mymat_raw') + os.sep
     EVALUATE_MODE = 'LOSO-No' # leaving one subject out subject-dependent  subject-indenpedent
@@ -698,7 +719,14 @@ if __name__ == "__main__":
     parameters_list = ['A']
     for TYPE in parameters_list:
         number_class, number_channel = numberClassChannel(TYPE)
-        RESULT_NAME = os.path.join(REPO_ROOT, 'results', 'A_Conformer')
+        RESULT_NAME = os.path.join(REPO_ROOT, 'results', 'A_Conformer', args.validation_version)
+
+        print('device: cpu')
+        print('validation version: ' + args.validation_version)
+        print('validation split: ' + (
+            'legacy notebook overlap' if args.validation_version == 'validation_1'
+            else 'corrected disjoint 70/30 split'
+        ))
     
         sModel = EEGTransformer(
             heads=HEADS, 
@@ -732,5 +760,6 @@ if __name__ == "__main__":
                         eeg1_dropout_rate = EEGNet1_DROPOUT_RATE,
                         flatten_eeg1 = FLATTEN_EEGNet1,
                         validate_ratio = validate_ratio,
+                        validation_version = args.validation_version,
                       )
         print(time.asctime(time.localtime(time.time())))
