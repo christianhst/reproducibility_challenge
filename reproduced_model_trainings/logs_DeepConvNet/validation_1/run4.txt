@@ -1,0 +1,102 @@
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1          [-1, 25, 22, 991]             275
+            Conv2d-2           [-1, 25, 1, 991]          13,775
+       BatchNorm2d-3           [-1, 25, 1, 991]              50
+               ELU-4           [-1, 25, 1, 991]               0
+         MaxPool2d-5           [-1, 25, 1, 330]               0
+           Dropout-6           [-1, 25, 1, 330]               0
+            Conv2d-7           [-1, 50, 1, 321]          12,550
+       BatchNorm2d-8           [-1, 50, 1, 321]             100
+               ELU-9           [-1, 50, 1, 321]               0
+        MaxPool2d-10           [-1, 50, 1, 107]               0
+          Dropout-11           [-1, 50, 1, 107]               0
+           Conv2d-12           [-1, 100, 1, 98]          50,100
+      BatchNorm2d-13           [-1, 100, 1, 98]             200
+              ELU-14           [-1, 100, 1, 98]               0
+        MaxPool2d-15           [-1, 100, 1, 32]               0
+          Dropout-16           [-1, 100, 1, 32]               0
+           Conv2d-17           [-1, 200, 1, 23]         200,200
+      BatchNorm2d-18           [-1, 200, 1, 23]             400
+              ELU-19           [-1, 200, 1, 23]               0
+        MaxPool2d-20            [-1, 200, 1, 7]               0
+          Dropout-21            [-1, 200, 1, 7]               0
+          Flatten-22                 [-1, 1400]               0
+           Linear-23                    [-1, 4]           5,604
+================================================================
+Total params: 283,254
+Trainable params: 283,254
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.08
+Forward/backward pass size (MB): 5.71
+Params size (MB): 1.08
+Estimated Total Size (MB): 6.88
+----------------------------------------------------------------
+Sat Nov  7 20:46:11 2026
+seed is 1946
+Subject 1
+-------------------- train size： (288, 1, 22, 1000) test size： (288, 22, 1000)
+1_0 train_acc: 0.3146 train_loss: 1.473932	val_acc: 0.367647 val_loss: 1.3381062
+1_36 train_acc: 0.8989 train_loss: 0.250187	val_acc: 0.617647 val_loss: 1.3077644
+1_37 train_acc: 0.9026 train_loss: 0.264597	val_acc: 0.676471 val_loss: 1.0826969
+1_45 train_acc: 0.9401 train_loss: 0.173183	val_acc: 0.730392 val_loss: 1.0792538
+1_48 train_acc: 0.9363 train_loss: 0.149317	val_acc: 0.745098 val_loss: 0.9680024
+1_53 train_acc: 0.9326 train_loss: 0.181095	val_acc: 0.720588 val_loss: 0.9394565
+1_58 train_acc: 0.9663 train_loss: 0.102182	val_acc: 0.750000 val_loss: 0.8932073
+1_61 train_acc: 0.9513 train_loss: 0.125432	val_acc: 0.779412 val_loss: 0.6486077
+1_62 train_acc: 0.9401 train_loss: 0.142845	val_acc: 0.794118 val_loss: 0.6307740
+1_65 train_acc: 0.9588 train_loss: 0.091675	val_acc: 0.813725 val_loss: 0.6179953
+1_72 train_acc: 0.9700 train_loss: 0.097819	val_acc: 0.823529 val_loss: 0.5840384
+1_76 train_acc: 0.9775 train_loss: 0.071520	val_acc: 0.818627 val_loss: 0.5743784
+1_78 train_acc: 0.9775 train_loss: 0.062605	val_acc: 0.857843 val_loss: 0.4834738
+1_90 train_acc: 0.9700 train_loss: 0.070880	val_acc: 0.882353 val_loss: 0.3076717
+1_101 train_acc: 0.9513 train_loss: 0.130421	val_acc: 0.921569 val_loss: 0.2198736
+1_116 train_acc: 0.9700 train_loss: 0.053211	val_acc: 0.946078 val_loss: 0.1727535
+1_126 train_acc: 0.9813 train_loss: 0.039955	val_acc: 0.946078 val_loss: 0.1630375
+1_127 train_acc: 0.9888 train_loss: 0.059823	val_acc: 0.946078 val_loss: 0.1419448
+1_137 train_acc: 0.9925 train_loss: 0.028813	val_acc: 0.936275 val_loss: 0.1267903
+1_138 train_acc: 0.9888 train_loss: 0.040613	val_acc: 0.955882 val_loss: 0.0983145
+1_153 train_acc: 0.9700 train_loss: 0.076149	val_acc: 0.960784 val_loss: 0.0856581
+1_154 train_acc: 0.9700 train_loss: 0.079092	val_acc: 0.965686 val_loss: 0.0626522
+1_165 train_acc: 0.9813 train_loss: 0.070529	val_acc: 0.985294 val_loss: 0.0555141
+1_172 train_acc: 0.9963 train_loss: 0.018751	val_acc: 0.995098 val_loss: 0.0340478
+1_203 train_acc: 0.9888 train_loss: 0.037935	val_acc: 0.990196 val_loss: 0.0310062
+1_213 train_acc: 0.9925 train_loss: 0.026330	val_acc: 0.995098 val_loss: 0.0291310
+1_232 train_acc: 0.9888 train_loss: 0.026680	val_acc: 0.995098 val_loss: 0.0244976
+1_253 train_acc: 1.0000 train_loss: 0.012349	val_acc: 0.990196 val_loss: 0.0228840
+1_257 train_acc: 0.9850 train_loss: 0.023734	val_acc: 0.995098 val_loss: 0.0192837
+1_262 train_acc: 1.0000 train_loss: 0.007476	val_acc: 1.000000 val_loss: 0.0189449
+1_265 train_acc: 0.9925 train_loss: 0.027004	val_acc: 0.995098 val_loss: 0.0146420
+1_268 train_acc: 0.9813 train_loss: 0.038742	val_acc: 1.000000 val_loss: 0.0079348
+1_311 train_acc: 0.9850 train_loss: 0.021085	val_acc: 1.000000 val_loss: 0.0078383
+1_316 train_acc: 0.9925 train_loss: 0.042595	val_acc: 1.000000 val_loss: 0.0073466
+1_318 train_acc: 0.9888 train_loss: 0.043717	val_acc: 1.000000 val_loss: 0.0047312
+1_336 train_acc: 0.9925 train_loss: 0.023871	val_acc: 1.000000 val_loss: 0.0021903
+1_406 train_acc: 0.9925 train_loss: 0.020754	val_acc: 1.000000 val_loss: 0.0016549
+1_419 train_acc: 1.0000 train_loss: 0.008988	val_acc: 1.000000 val_loss: 0.0015650
+1_448 train_acc: 1.0000 train_loss: 0.008749	val_acc: 1.000000 val_loss: 0.0014331
+1_449 train_acc: 0.9963 train_loss: 0.023646	val_acc: 1.000000 val_loss: 0.0008080
+1_511 train_acc: 0.9963 train_loss: 0.013587	val_acc: 1.000000 val_loss: 0.0007809
+1_532 train_acc: 0.9850 train_loss: 0.039468	val_acc: 1.000000 val_loss: 0.0003461
+1_632 train_acc: 1.0000 train_loss: 0.002659	val_acc: 1.000000 val_loss: 0.0002803
+1_638 train_acc: 0.9963 train_loss: 0.006560	val_acc: 1.000000 val_loss: 0.0002211
+1_644 train_acc: 1.0000 train_loss: 0.001578	val_acc: 1.000000 val_loss: 0.0001296
+1_700 train_acc: 1.0000 train_loss: 0.002884	val_acc: 1.000000 val_loss: 0.0001163
+1_708 train_acc: 0.9963 train_loss: 0.009209	val_acc: 1.000000 val_loss: 0.0000759
+1_814 train_acc: 1.0000 train_loss: 0.004513	val_acc: 1.000000 val_loss: 0.0000458
+1_964 train_acc: 0.9963 train_loss: 0.011975	val_acc: 1.000000 val_loss: 0.0000252
+epoch:  964 	The test accuracy is: 0.8333333333333334
+ THE BEST ACCURACY IS 0.8333333333333334	kappa is 0.7777777777777778
+subject 1 duration: 12:30:16.544681
+**The average Best accuracy is: 83.33333333333334kappa is: 77.77777777777779
+
+best epochs:  [964]
+---------  all result  ---------
+        accuray  precision     recall         f1      kappa
+0     83.333333  83.374149  83.333333  83.238304  77.777778
+mean  83.333333  83.374149  83.333333  83.238304  77.777778
+std         NaN        NaN        NaN        NaN        NaN
+****************************************
+Sun Nov  8 09:16:29 2026
