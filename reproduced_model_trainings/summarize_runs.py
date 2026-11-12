@@ -13,7 +13,7 @@ log_dir = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).parent / "lo
 
 
 def parse_run(path):
-    lines = path.read_text().splitlines()
+    lines = path.read_text(encoding="utf-8").splitlines()
     start = next(i for i, l in enumerate(lines) if "all result" in l)
     names = lines[start + 1].split()                     # metric names (header row)
     mean_row = next(l for l in lines[start:] if l.startswith("mean"))
@@ -23,6 +23,9 @@ def parse_run(path):
 runs = sorted(log_dir.glob("run*.txt"))
 results = [parse_run(p) for p in runs]
 n = len(results)
+if n == 0:
+    raise SystemExit(f"No run*.txt logs found in {log_dir}")
+
 print(f"{n} runs from {log_dir}\n")
 print(f"{'metric':<10}{'mean':>9}{'std':>9}{'SE':>9}   per-run")
 
@@ -34,7 +37,7 @@ for metric in results[0]:
 
     # std:  s = sqrt( Σ (x_i - x̄)² / (n - 1) )
     # divide by n-1, not n: x̄ is estimated from the same runs, so dividing by n underestimates the spread
-    std = math.sqrt(sum((xi - mean) ** 2 for xi in x) / (n - 1))
+    std = math.sqrt(sum((xi - mean) ** 2 for xi in x) / (n - 1)) if n > 1 else math.nan
 
     # standard error of the mean:  SE = s / sqrt(n)
     # std = how much a single run varies; SE = how uncertain the mean x̄ is (shrinks as more runs are added)
