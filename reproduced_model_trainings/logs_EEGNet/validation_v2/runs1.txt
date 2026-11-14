@@ -1,0 +1,219 @@
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1          [-1, 8, 22, 1000]             512
+       BatchNorm2d-2          [-1, 8, 22, 1000]              16
+            Conv2d-3          [-1, 16, 1, 1000]             352
+       BatchNorm2d-4          [-1, 16, 1, 1000]              32
+               ELU-5          [-1, 16, 1, 1000]               0
+         AvgPool2d-6           [-1, 16, 1, 125]               0
+           Dropout-7           [-1, 16, 1, 125]               0
+            Conv2d-8           [-1, 16, 1, 125]           4,096
+       BatchNorm2d-9           [-1, 16, 1, 125]              32
+              ELU-10           [-1, 16, 1, 125]               0
+        AvgPool2d-11            [-1, 16, 1, 15]               0
+          Dropout-12            [-1, 16, 1, 15]               0
+        Rearrange-13               [-1, 15, 16]               0
+PatchEmbeddingCNN-14               [-1, 15, 16]               0
+          Dropout-15               [-1, 15, 16]               0
+PositioinalEncoding-16               [-1, 15, 16]               0
+           Linear-17               [-1, 15, 16]             272
+           Linear-18               [-1, 15, 16]             272
+           Linear-19               [-1, 15, 16]             272
+          Dropout-20            [-1, 2, 15, 15]               0
+           Linear-21               [-1, 15, 16]             272
+MultiHeadAttention-22               [-1, 15, 16]               0
+          Dropout-23               [-1, 15, 16]               0
+        LayerNorm-24               [-1, 15, 16]              32
+      ResidualAdd-25               [-1, 15, 16]               0
+           Linear-26               [-1, 15, 64]           1,088
+             GELU-27               [-1, 15, 64]               0
+          Dropout-28               [-1, 15, 64]               0
+           Linear-29               [-1, 15, 16]           1,040
+          Dropout-30               [-1, 15, 16]               0
+        LayerNorm-31               [-1, 15, 16]              32
+      ResidualAdd-32               [-1, 15, 16]               0
+           Linear-33               [-1, 15, 16]             272
+           Linear-34               [-1, 15, 16]             272
+           Linear-35               [-1, 15, 16]             272
+          Dropout-36            [-1, 2, 15, 15]               0
+           Linear-37               [-1, 15, 16]             272
+MultiHeadAttention-38               [-1, 15, 16]               0
+          Dropout-39               [-1, 15, 16]               0
+        LayerNorm-40               [-1, 15, 16]              32
+      ResidualAdd-41               [-1, 15, 16]               0
+           Linear-42               [-1, 15, 64]           1,088
+             GELU-43               [-1, 15, 64]               0
+          Dropout-44               [-1, 15, 64]               0
+           Linear-45               [-1, 15, 16]           1,040
+          Dropout-46               [-1, 15, 16]               0
+        LayerNorm-47               [-1, 15, 16]              32
+      ResidualAdd-48               [-1, 15, 16]               0
+           Linear-49               [-1, 15, 16]             272
+           Linear-50               [-1, 15, 16]             272
+           Linear-51               [-1, 15, 16]             272
+          Dropout-52            [-1, 2, 15, 15]               0
+           Linear-53               [-1, 15, 16]             272
+MultiHeadAttention-54               [-1, 15, 16]               0
+          Dropout-55               [-1, 15, 16]               0
+        LayerNorm-56               [-1, 15, 16]              32
+      ResidualAdd-57               [-1, 15, 16]               0
+           Linear-58               [-1, 15, 64]           1,088
+             GELU-59               [-1, 15, 64]               0
+          Dropout-60               [-1, 15, 64]               0
+           Linear-61               [-1, 15, 16]           1,040
+          Dropout-62               [-1, 15, 16]               0
+        LayerNorm-63               [-1, 15, 16]              32
+      ResidualAdd-64               [-1, 15, 16]               0
+           Linear-65               [-1, 15, 16]             272
+           Linear-66               [-1, 15, 16]             272
+           Linear-67               [-1, 15, 16]             272
+          Dropout-68            [-1, 2, 15, 15]               0
+           Linear-69               [-1, 15, 16]             272
+MultiHeadAttention-70               [-1, 15, 16]               0
+          Dropout-71               [-1, 15, 16]               0
+        LayerNorm-72               [-1, 15, 16]              32
+      ResidualAdd-73               [-1, 15, 16]               0
+           Linear-74               [-1, 15, 64]           1,088
+             GELU-75               [-1, 15, 64]               0
+          Dropout-76               [-1, 15, 64]               0
+           Linear-77               [-1, 15, 16]           1,040
+          Dropout-78               [-1, 15, 16]               0
+        LayerNorm-79               [-1, 15, 16]              32
+      ResidualAdd-80               [-1, 15, 16]               0
+           Linear-81               [-1, 15, 16]             272
+           Linear-82               [-1, 15, 16]             272
+           Linear-83               [-1, 15, 16]             272
+          Dropout-84            [-1, 2, 15, 15]               0
+           Linear-85               [-1, 15, 16]             272
+MultiHeadAttention-86               [-1, 15, 16]               0
+          Dropout-87               [-1, 15, 16]               0
+        LayerNorm-88               [-1, 15, 16]              32
+      ResidualAdd-89               [-1, 15, 16]               0
+           Linear-90               [-1, 15, 64]           1,088
+             GELU-91               [-1, 15, 64]               0
+          Dropout-92               [-1, 15, 64]               0
+           Linear-93               [-1, 15, 16]           1,040
+          Dropout-94               [-1, 15, 16]               0
+        LayerNorm-95               [-1, 15, 16]              32
+      ResidualAdd-96               [-1, 15, 16]               0
+           Linear-97               [-1, 15, 16]             272
+           Linear-98               [-1, 15, 16]             272
+           Linear-99               [-1, 15, 16]             272
+         Dropout-100            [-1, 2, 15, 15]               0
+          Linear-101               [-1, 15, 16]             272
+MultiHeadAttention-102               [-1, 15, 16]               0
+         Dropout-103               [-1, 15, 16]               0
+       LayerNorm-104               [-1, 15, 16]              32
+     ResidualAdd-105               [-1, 15, 16]               0
+          Linear-106               [-1, 15, 64]           1,088
+            GELU-107               [-1, 15, 64]               0
+         Dropout-108               [-1, 15, 64]               0
+          Linear-109               [-1, 15, 16]           1,040
+         Dropout-110               [-1, 15, 16]               0
+       LayerNorm-111               [-1, 15, 16]              32
+     ResidualAdd-112               [-1, 15, 16]               0
+         Flatten-113                  [-1, 240]               0
+         Dropout-114                  [-1, 240]               0
+          Linear-115                    [-1, 4]             964
+================================================================
+Total params: 25,684
+Trainable params: 25,684
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.08
+Forward/backward pass size (MB): 3.43
+Params size (MB): 0.10
+Estimated Total Size (MB): 3.61
+----------------------------------------------------------------
+Sat Nov 14 10:43:41 2026
+seed is 475
+Subject 1
+-------------------- train size： (288, 1, 22, 1000) test size： (288, 22, 1000)
+1_0 train_acc: 0.2547 train_loss: 2.865342	val_acc: 0.333333 val_loss: 1.4376965
+1_1 train_acc: 0.2959 train_loss: 2.109268	val_acc: 0.380952 val_loss: 1.3401026
+1_2 train_acc: 0.3258 train_loss: 1.937151	val_acc: 0.464286 val_loss: 1.2079923
+1_4 train_acc: 0.3670 train_loss: 1.640859	val_acc: 0.488095 val_loss: 1.1415598
+1_5 train_acc: 0.2959 train_loss: 1.815970	val_acc: 0.523810 val_loss: 1.1253047
+1_6 train_acc: 0.3558 train_loss: 1.617531	val_acc: 0.523810 val_loss: 1.0892831
+1_7 train_acc: 0.3558 train_loss: 1.487567	val_acc: 0.678571 val_loss: 1.0250059
+1_8 train_acc: 0.4270 train_loss: 1.351209	val_acc: 0.630952 val_loss: 0.9619321
+1_9 train_acc: 0.3970 train_loss: 1.399199	val_acc: 0.666667 val_loss: 0.8831104
+1_10 train_acc: 0.4757 train_loss: 1.189028	val_acc: 0.773810 val_loss: 0.7573630
+1_11 train_acc: 0.5243 train_loss: 1.039793	val_acc: 0.738095 val_loss: 0.7356007
+1_13 train_acc: 0.5393 train_loss: 1.046651	val_acc: 0.714286 val_loss: 0.6907940
+1_14 train_acc: 0.6105 train_loss: 0.905662	val_acc: 0.702381 val_loss: 0.6127009
+1_20 train_acc: 0.6330 train_loss: 0.760656	val_acc: 0.714286 val_loss: 0.5496339
+1_33 train_acc: 0.7266 train_loss: 0.639481	val_acc: 0.726190 val_loss: 0.5473246
+1_38 train_acc: 0.7303 train_loss: 0.601323	val_acc: 0.750000 val_loss: 0.4939916
+1_46 train_acc: 0.7116 train_loss: 0.618119	val_acc: 0.821429 val_loss: 0.4135419
+1_56 train_acc: 0.8165 train_loss: 0.457184	val_acc: 0.845238 val_loss: 0.3789126
+1_60 train_acc: 0.8052 train_loss: 0.499814	val_acc: 0.833333 val_loss: 0.3772599
+1_65 train_acc: 0.8090 train_loss: 0.477814	val_acc: 0.821429 val_loss: 0.3653868
+1_66 train_acc: 0.7978 train_loss: 0.485563	val_acc: 0.892857 val_loss: 0.2955974
+1_77 train_acc: 0.8315 train_loss: 0.403489	val_acc: 0.892857 val_loss: 0.2749410
+1_81 train_acc: 0.8539 train_loss: 0.390508	val_acc: 0.880952 val_loss: 0.2586049
+1_84 train_acc: 0.8464 train_loss: 0.397932	val_acc: 0.880952 val_loss: 0.2532759
+1_86 train_acc: 0.8652 train_loss: 0.333352	val_acc: 0.928571 val_loss: 0.1986614
+1_87 train_acc: 0.8464 train_loss: 0.363823	val_acc: 0.916667 val_loss: 0.1872509
+1_99 train_acc: 0.8464 train_loss: 0.357739	val_acc: 0.940476 val_loss: 0.1729916
+1_106 train_acc: 0.8652 train_loss: 0.291735	val_acc: 0.940476 val_loss: 0.1461285
+1_113 train_acc: 0.8951 train_loss: 0.337600	val_acc: 0.952381 val_loss: 0.1253803
+1_151 train_acc: 0.8876 train_loss: 0.273540	val_acc: 0.940476 val_loss: 0.1088718
+1_156 train_acc: 0.9101 train_loss: 0.247160	val_acc: 0.940476 val_loss: 0.1070468
+1_160 train_acc: 0.9213 train_loss: 0.214281	val_acc: 0.952381 val_loss: 0.1018764
+1_185 train_acc: 0.9101 train_loss: 0.236544	val_acc: 0.964286 val_loss: 0.0766821
+1_224 train_acc: 0.9064 train_loss: 0.264186	val_acc: 0.952381 val_loss: 0.0759111
+1_247 train_acc: 0.9026 train_loss: 0.215437	val_acc: 1.000000 val_loss: 0.0500892
+1_270 train_acc: 0.9363 train_loss: 0.189525	val_acc: 0.988095 val_loss: 0.0408630
+1_292 train_acc: 0.9363 train_loss: 0.164922	val_acc: 1.000000 val_loss: 0.0350088
+1_382 train_acc: 0.9363 train_loss: 0.184826	val_acc: 1.000000 val_loss: 0.0313744
+1_401 train_acc: 0.9438 train_loss: 0.162868	val_acc: 1.000000 val_loss: 0.0278840
+1_468 train_acc: 0.9213 train_loss: 0.241704	val_acc: 0.988095 val_loss: 0.0245299
+1_490 train_acc: 0.9438 train_loss: 0.132349	val_acc: 0.988095 val_loss: 0.0213165
+1_493 train_acc: 0.9476 train_loss: 0.168389	val_acc: 1.000000 val_loss: 0.0201778
+1_564 train_acc: 0.9363 train_loss: 0.138598	val_acc: 1.000000 val_loss: 0.0198220
+1_593 train_acc: 0.9326 train_loss: 0.159085	val_acc: 1.000000 val_loss: 0.0185260
+1_608 train_acc: 0.9438 train_loss: 0.142084	val_acc: 1.000000 val_loss: 0.0144286
+1_649 train_acc: 0.9401 train_loss: 0.125968	val_acc: 1.000000 val_loss: 0.0113612
+1_701 train_acc: 0.9625 train_loss: 0.105017	val_acc: 1.000000 val_loss: 0.0090750
+1_802 train_acc: 0.9588 train_loss: 0.117715	val_acc: 1.000000 val_loss: 0.0066494
+1_895 train_acc: 0.9513 train_loss: 0.114055	val_acc: 1.000000 val_loss: 0.0051520
+1_898 train_acc: 0.9588 train_loss: 0.084719	val_acc: 1.000000 val_loss: 0.0049086
+1_951 train_acc: 0.9625 train_loss: 0.126380	val_acc: 1.000000 val_loss: 0.0044720
+epoch:  951 	The test accuracy is: 0.8819444444444444
+ THE BEST ACCURACY IS 0.8819444444444444	kappa is 0.8425925925925926
+subject 1 duration: 2:13:00.224004
+seed is 1201
+Subject 2
+Traceback (most recent call last):
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/challange3.10/lib/python3.10/site-packages/scipy/io/matlab/_mio.py", line 39, in _open_file
+    return open(file_like, mode), True
+FileNotFoundError: [Errno 2] No such file or directory: 'mymat_raw/A02T.mat'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/EEGNet.py", line 748, in <module>
+    result = main(RESULT_NAME,
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/EEGNet.py", line 640, in main
+    testAcc, Y_true, Y_pred, df_process, best_epoch = exp.train()
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/EEGNet.py", line 420, in train
+    img, label, test_data, test_label = self.get_source_data()
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/EEGNet.py", line 376, in get_source_data
+    self.test_label) = load_data_evaluate(self.root, self.dataset_type, self.nSub, mode_evaluate=self.evaluate_mode)
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/utils.py", line 52, in load_data_evaluate
+    return load_data_subject_dependent(dir_path, dataset_type, n_sub)
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/utils.py", line 69, in load_data_subject_dependent
+    train_data, train_label = load_data(dir_path, dataset_type, n_sub, mode='train')
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/utils.py", line 143, in load_data
+    data_mat = scipy.io.loadmat(dir_path + '{}{:02d}{}.mat'.format(dataset_type, n_sub, mode_s))
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/challange3.10/lib/python3.10/site-packages/scipy/io/matlab/_mio.py", line 233, in loadmat
+    with _open_file_context(file_name, appendmat) as f:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/challange3.10/lib/python3.10/site-packages/scipy/io/matlab/_mio.py", line 17, in _open_file_context
+    f, opened = _open_file(file_like, appendmat, mode)
+  File "/mnt/c/Users/dimon/Downloads/Reproducibility challange/challange3.10/lib/python3.10/site-packages/scipy/io/matlab/_mio.py", line 45, in _open_file
+    return open(file_like, mode), True
+FileNotFoundError: [Errno 2] No such file or directory: 'mymat_raw/A02T.mat'
