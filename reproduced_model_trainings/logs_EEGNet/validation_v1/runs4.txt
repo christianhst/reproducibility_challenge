@@ -1,0 +1,223 @@
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1          [-1, 8, 22, 1000]             512
+       BatchNorm2d-2          [-1, 8, 22, 1000]              16
+            Conv2d-3          [-1, 16, 1, 1000]             352
+       BatchNorm2d-4          [-1, 16, 1, 1000]              32
+               ELU-5          [-1, 16, 1, 1000]               0
+         AvgPool2d-6           [-1, 16, 1, 125]               0
+           Dropout-7           [-1, 16, 1, 125]               0
+            Conv2d-8           [-1, 16, 1, 125]           4,096
+       BatchNorm2d-9           [-1, 16, 1, 125]              32
+              ELU-10           [-1, 16, 1, 125]               0
+        AvgPool2d-11            [-1, 16, 1, 15]               0
+          Dropout-12            [-1, 16, 1, 15]               0
+        Rearrange-13               [-1, 15, 16]               0
+PatchEmbeddingCNN-14               [-1, 15, 16]               0
+          Dropout-15               [-1, 15, 16]               0
+PositioinalEncoding-16               [-1, 15, 16]               0
+           Linear-17               [-1, 15, 16]             272
+           Linear-18               [-1, 15, 16]             272
+           Linear-19               [-1, 15, 16]             272
+          Dropout-20            [-1, 2, 15, 15]               0
+           Linear-21               [-1, 15, 16]             272
+MultiHeadAttention-22               [-1, 15, 16]               0
+          Dropout-23               [-1, 15, 16]               0
+        LayerNorm-24               [-1, 15, 16]              32
+      ResidualAdd-25               [-1, 15, 16]               0
+           Linear-26               [-1, 15, 64]           1,088
+             GELU-27               [-1, 15, 64]               0
+          Dropout-28               [-1, 15, 64]               0
+           Linear-29               [-1, 15, 16]           1,040
+          Dropout-30               [-1, 15, 16]               0
+        LayerNorm-31               [-1, 15, 16]              32
+      ResidualAdd-32               [-1, 15, 16]               0
+           Linear-33               [-1, 15, 16]             272
+           Linear-34               [-1, 15, 16]             272
+           Linear-35               [-1, 15, 16]             272
+          Dropout-36            [-1, 2, 15, 15]               0
+           Linear-37               [-1, 15, 16]             272
+MultiHeadAttention-38               [-1, 15, 16]               0
+          Dropout-39               [-1, 15, 16]               0
+        LayerNorm-40               [-1, 15, 16]              32
+      ResidualAdd-41               [-1, 15, 16]               0
+           Linear-42               [-1, 15, 64]           1,088
+             GELU-43               [-1, 15, 64]               0
+          Dropout-44               [-1, 15, 64]               0
+           Linear-45               [-1, 15, 16]           1,040
+          Dropout-46               [-1, 15, 16]               0
+        LayerNorm-47               [-1, 15, 16]              32
+      ResidualAdd-48               [-1, 15, 16]               0
+           Linear-49               [-1, 15, 16]             272
+           Linear-50               [-1, 15, 16]             272
+           Linear-51               [-1, 15, 16]             272
+          Dropout-52            [-1, 2, 15, 15]               0
+           Linear-53               [-1, 15, 16]             272
+MultiHeadAttention-54               [-1, 15, 16]               0
+          Dropout-55               [-1, 15, 16]               0
+        LayerNorm-56               [-1, 15, 16]              32
+      ResidualAdd-57               [-1, 15, 16]               0
+           Linear-58               [-1, 15, 64]           1,088
+             GELU-59               [-1, 15, 64]               0
+          Dropout-60               [-1, 15, 64]               0
+           Linear-61               [-1, 15, 16]           1,040
+          Dropout-62               [-1, 15, 16]               0
+        LayerNorm-63               [-1, 15, 16]              32
+      ResidualAdd-64               [-1, 15, 16]               0
+           Linear-65               [-1, 15, 16]             272
+           Linear-66               [-1, 15, 16]             272
+           Linear-67               [-1, 15, 16]             272
+          Dropout-68            [-1, 2, 15, 15]               0
+           Linear-69               [-1, 15, 16]             272
+MultiHeadAttention-70               [-1, 15, 16]               0
+          Dropout-71               [-1, 15, 16]               0
+        LayerNorm-72               [-1, 15, 16]              32
+      ResidualAdd-73               [-1, 15, 16]               0
+           Linear-74               [-1, 15, 64]           1,088
+             GELU-75               [-1, 15, 64]               0
+          Dropout-76               [-1, 15, 64]               0
+           Linear-77               [-1, 15, 16]           1,040
+          Dropout-78               [-1, 15, 16]               0
+        LayerNorm-79               [-1, 15, 16]              32
+      ResidualAdd-80               [-1, 15, 16]               0
+           Linear-81               [-1, 15, 16]             272
+           Linear-82               [-1, 15, 16]             272
+           Linear-83               [-1, 15, 16]             272
+          Dropout-84            [-1, 2, 15, 15]               0
+           Linear-85               [-1, 15, 16]             272
+MultiHeadAttention-86               [-1, 15, 16]               0
+          Dropout-87               [-1, 15, 16]               0
+        LayerNorm-88               [-1, 15, 16]              32
+      ResidualAdd-89               [-1, 15, 16]               0
+           Linear-90               [-1, 15, 64]           1,088
+             GELU-91               [-1, 15, 64]               0
+          Dropout-92               [-1, 15, 64]               0
+           Linear-93               [-1, 15, 16]           1,040
+          Dropout-94               [-1, 15, 16]               0
+        LayerNorm-95               [-1, 15, 16]              32
+      ResidualAdd-96               [-1, 15, 16]               0
+           Linear-97               [-1, 15, 16]             272
+           Linear-98               [-1, 15, 16]             272
+           Linear-99               [-1, 15, 16]             272
+         Dropout-100            [-1, 2, 15, 15]               0
+          Linear-101               [-1, 15, 16]             272
+MultiHeadAttention-102               [-1, 15, 16]               0
+         Dropout-103               [-1, 15, 16]               0
+       LayerNorm-104               [-1, 15, 16]              32
+     ResidualAdd-105               [-1, 15, 16]               0
+          Linear-106               [-1, 15, 64]           1,088
+            GELU-107               [-1, 15, 64]               0
+         Dropout-108               [-1, 15, 64]               0
+          Linear-109               [-1, 15, 16]           1,040
+         Dropout-110               [-1, 15, 16]               0
+       LayerNorm-111               [-1, 15, 16]              32
+     ResidualAdd-112               [-1, 15, 16]               0
+         Flatten-113                  [-1, 240]               0
+         Dropout-114                  [-1, 240]               0
+          Linear-115                    [-1, 4]             964
+================================================================
+Total params: 25,684
+Trainable params: 25,684
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.08
+Forward/backward pass size (MB): 3.43
+Params size (MB): 0.10
+Estimated Total Size (MB): 3.61
+----------------------------------------------------------------
+Mon Nov 16 11:32:06 2026
+seed is 1006
+Subject 1
+-------------------- train size： (288, 1, 22, 1000) test size： (288, 22, 1000)
+1_0 train_acc: 0.2884 train_loss: 2.450652	val_acc: 0.264706 val_loss: 1.5144141
+1_1 train_acc: 0.3034 train_loss: 2.085975	val_acc: 0.284314 val_loss: 1.4041256
+1_2 train_acc: 0.2809 train_loss: 2.168587	val_acc: 0.284314 val_loss: 1.3704187
+1_3 train_acc: 0.3221 train_loss: 1.960064	val_acc: 0.357843 val_loss: 1.2880074
+1_4 train_acc: 0.3296 train_loss: 1.855179	val_acc: 0.377451 val_loss: 1.2579846
+1_5 train_acc: 0.3633 train_loss: 1.601091	val_acc: 0.446078 val_loss: 1.1933056
+1_6 train_acc: 0.3446 train_loss: 1.619734	val_acc: 0.460784 val_loss: 1.1709969
+1_7 train_acc: 0.2734 train_loss: 1.796183	val_acc: 0.544118 val_loss: 1.1262190
+1_8 train_acc: 0.3820 train_loss: 1.467077	val_acc: 0.598039 val_loss: 1.0727583
+1_9 train_acc: 0.4419 train_loss: 1.416425	val_acc: 0.642157 val_loss: 1.0301727
+1_10 train_acc: 0.4007 train_loss: 1.359067	val_acc: 0.730392 val_loss: 0.9498334
+1_11 train_acc: 0.4419 train_loss: 1.275977	val_acc: 0.740196 val_loss: 0.8827509
+1_12 train_acc: 0.4757 train_loss: 1.162989	val_acc: 0.774510 val_loss: 0.8473288
+1_13 train_acc: 0.5468 train_loss: 1.062934	val_acc: 0.794118 val_loss: 0.7682614
+1_14 train_acc: 0.4719 train_loss: 1.099459	val_acc: 0.784314 val_loss: 0.7331290
+1_15 train_acc: 0.5281 train_loss: 1.038494	val_acc: 0.774510 val_loss: 0.7070539
+1_16 train_acc: 0.5693 train_loss: 0.970868	val_acc: 0.848039 val_loss: 0.6207244
+1_19 train_acc: 0.6180 train_loss: 0.831732	val_acc: 0.803922 val_loss: 0.6084214
+1_20 train_acc: 0.6292 train_loss: 0.802696	val_acc: 0.799020 val_loss: 0.5876284
+1_21 train_acc: 0.6554 train_loss: 0.752365	val_acc: 0.828431 val_loss: 0.5718744
+1_22 train_acc: 0.6330 train_loss: 0.765611	val_acc: 0.789216 val_loss: 0.5433109
+1_23 train_acc: 0.6142 train_loss: 0.893036	val_acc: 0.813725 val_loss: 0.5196635
+1_28 train_acc: 0.6929 train_loss: 0.709371	val_acc: 0.789216 val_loss: 0.4996710
+1_30 train_acc: 0.6554 train_loss: 0.720127	val_acc: 0.784314 val_loss: 0.4898287
+1_37 train_acc: 0.7715 train_loss: 0.498227	val_acc: 0.803922 val_loss: 0.4802855
+1_41 train_acc: 0.7940 train_loss: 0.474310	val_acc: 0.808824 val_loss: 0.4624060
+1_47 train_acc: 0.7566 train_loss: 0.563082	val_acc: 0.803922 val_loss: 0.4469824
+1_50 train_acc: 0.8277 train_loss: 0.452826	val_acc: 0.808824 val_loss: 0.4205579
+1_54 train_acc: 0.8090 train_loss: 0.466686	val_acc: 0.818627 val_loss: 0.4196374
+1_56 train_acc: 0.7978 train_loss: 0.482332	val_acc: 0.823529 val_loss: 0.4058675
+1_58 train_acc: 0.8015 train_loss: 0.498538	val_acc: 0.818627 val_loss: 0.3890036
+1_62 train_acc: 0.7903 train_loss: 0.523159	val_acc: 0.813725 val_loss: 0.3703233
+1_64 train_acc: 0.7790 train_loss: 0.565259	val_acc: 0.823529 val_loss: 0.3695585
+1_66 train_acc: 0.8052 train_loss: 0.478392	val_acc: 0.833333 val_loss: 0.3660262
+1_67 train_acc: 0.8577 train_loss: 0.416029	val_acc: 0.843137 val_loss: 0.3657583
+1_68 train_acc: 0.8090 train_loss: 0.483450	val_acc: 0.828431 val_loss: 0.3590506
+1_69 train_acc: 0.7790 train_loss: 0.493382	val_acc: 0.838235 val_loss: 0.3274465
+1_75 train_acc: 0.8577 train_loss: 0.414686	val_acc: 0.906863 val_loss: 0.2776521
+1_85 train_acc: 0.8165 train_loss: 0.457411	val_acc: 0.872549 val_loss: 0.2732574
+1_91 train_acc: 0.8015 train_loss: 0.414788	val_acc: 0.872549 val_loss: 0.2677031
+1_92 train_acc: 0.8464 train_loss: 0.398627	val_acc: 0.892157 val_loss: 0.2454321
+1_102 train_acc: 0.8427 train_loss: 0.399644	val_acc: 0.887255 val_loss: 0.2444482
+1_103 train_acc: 0.8614 train_loss: 0.397733	val_acc: 0.892157 val_loss: 0.2271376
+1_104 train_acc: 0.8839 train_loss: 0.359699	val_acc: 0.906863 val_loss: 0.2193444
+1_106 train_acc: 0.8652 train_loss: 0.329443	val_acc: 0.926471 val_loss: 0.2173305
+1_107 train_acc: 0.8577 train_loss: 0.368469	val_acc: 0.921569 val_loss: 0.2008593
+1_113 train_acc: 0.8689 train_loss: 0.333249	val_acc: 0.926471 val_loss: 0.1994076
+1_116 train_acc: 0.8652 train_loss: 0.313807	val_acc: 0.941176 val_loss: 0.1666772
+1_143 train_acc: 0.8652 train_loss: 0.292736	val_acc: 0.946078 val_loss: 0.1444115
+1_167 train_acc: 0.8727 train_loss: 0.327442	val_acc: 0.941176 val_loss: 0.1372723
+1_180 train_acc: 0.9026 train_loss: 0.263264	val_acc: 0.946078 val_loss: 0.1331401
+1_198 train_acc: 0.9101 train_loss: 0.254120	val_acc: 0.970588 val_loss: 0.1248738
+1_212 train_acc: 0.8951 train_loss: 0.258601	val_acc: 0.965686 val_loss: 0.1031137
+1_242 train_acc: 0.9288 train_loss: 0.196763	val_acc: 0.970588 val_loss: 0.0993060
+1_248 train_acc: 0.9476 train_loss: 0.163138	val_acc: 0.975490 val_loss: 0.0936310
+1_256 train_acc: 0.9026 train_loss: 0.213491	val_acc: 0.975490 val_loss: 0.0925823
+1_267 train_acc: 0.9326 train_loss: 0.211687	val_acc: 0.970588 val_loss: 0.0897764
+1_283 train_acc: 0.9438 train_loss: 0.159340	val_acc: 0.970588 val_loss: 0.0889611
+1_291 train_acc: 0.9176 train_loss: 0.210162	val_acc: 0.975490 val_loss: 0.0852364
+1_307 train_acc: 0.9064 train_loss: 0.197709	val_acc: 0.975490 val_loss: 0.0818595
+1_312 train_acc: 0.9476 train_loss: 0.165041	val_acc: 0.975490 val_loss: 0.0696245
+1_328 train_acc: 0.9176 train_loss: 0.211900	val_acc: 0.995098 val_loss: 0.0606010
+1_390 train_acc: 0.9064 train_loss: 0.209894	val_acc: 0.995098 val_loss: 0.0528203
+1_421 train_acc: 0.9213 train_loss: 0.211706	val_acc: 0.985294 val_loss: 0.0492507
+1_425 train_acc: 0.9251 train_loss: 0.179430	val_acc: 0.995098 val_loss: 0.0410670
+1_530 train_acc: 0.9438 train_loss: 0.134434	val_acc: 0.995098 val_loss: 0.0391692
+1_559 train_acc: 0.9438 train_loss: 0.184082	val_acc: 0.985294 val_loss: 0.0372619
+1_582 train_acc: 0.9251 train_loss: 0.162161	val_acc: 0.995098 val_loss: 0.0372442
+1_586 train_acc: 0.9663 train_loss: 0.111425	val_acc: 0.995098 val_loss: 0.0363479
+1_603 train_acc: 0.9326 train_loss: 0.185774	val_acc: 0.995098 val_loss: 0.0292006
+1_630 train_acc: 0.9625 train_loss: 0.126054	val_acc: 1.000000 val_loss: 0.0257812
+1_661 train_acc: 0.9363 train_loss: 0.183349	val_acc: 0.995098 val_loss: 0.0235374
+1_700 train_acc: 0.9438 train_loss: 0.130051	val_acc: 1.000000 val_loss: 0.0173576
+1_715 train_acc: 0.9476 train_loss: 0.148220	val_acc: 1.000000 val_loss: 0.0173151
+1_779 train_acc: 0.9663 train_loss: 0.090642	val_acc: 1.000000 val_loss: 0.0165424
+1_805 train_acc: 0.9513 train_loss: 0.111904	val_acc: 1.000000 val_loss: 0.0158233
+1_823 train_acc: 0.9288 train_loss: 0.210499	val_acc: 1.000000 val_loss: 0.0128682
+1_970 train_acc: 0.9738 train_loss: 0.098473	val_acc: 1.000000 val_loss: 0.0126164
+epoch:  970 	The test accuracy is: 0.8854166666666666
+ THE BEST ACCURACY IS 0.8854166666666666	kappa is 0.8472222222222222
+subject 1 duration: 1:18:42.358738
+**The average Best accuracy is: 88.54166666666666kappa is: 84.72222222222221
+
+best epochs:  [970]
+---------  all result  ---------
+        accuray  precision     recall         f1      kappa
+0     88.541667  89.087995  88.541667  88.428651  84.722222
+mean  88.541667  89.087995  88.541667  88.428651  84.722222
+std         NaN        NaN        NaN        NaN        NaN
+****************************************
+Mon Nov 16 12:50:51 2026
