@@ -700,7 +700,7 @@ if __name__ == "__main__":
     DATA_DIR = r'mymat_raw/'
     EVALUATE_MODE = 'LOSO-No' # leaving one subject out subject-dependent  subject-indenpedent
 
-    N_SUBJECT = 9       # BCI 
+    N_SUBJECT = 1       # BCI 
     N_AUG = 3           # data augmentation times for generating artificial training data set
     N_SEG = 8           # segmentation times for S&R
 
