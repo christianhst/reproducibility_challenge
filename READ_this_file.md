@@ -21,13 +21,19 @@ Note:  val_data_list.append(img[-number_validate:]) and val_label_list.append(la
 
 #3 Summarize results
 run `reproduced_model_trainings/summarize_runs.py` (change folder directory for each logs_<model_name>)
-create repro_results.xlsx to manually note your findings
-like this
+
+create repro_results.xlsx to manually note your findings like this
+
 |  | Paper,val1 | Repro,val1 | Repro,val2 | std,val1 | SE,val1 | std,val2| SE,val2|
+
 |DeepConvNet|-----|--------|------|-----|--------|------|-----|
+
 |ShallowConvNet|-----|--------|------|-----|--------|------|-----|
+
 |CTNet|-----|--------|------|-----|--------|------|-----|
+
 |Conformer|-----|--------|------|-----|--------|------|-----|
+
 |EEGNet|-----|--------|------|-----|--------|------|-----|
 
 then you can run `python3 repro_barplot.py`
