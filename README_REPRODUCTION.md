@@ -10,7 +10,7 @@ pip install -r requirements.txt
 
 ## 2. Data
 
-Download from the [BCI Competition IV page](https://www.bbci.de/competition/iv/) and put `A01T.gdf` and `A01E.gdf` in `BCICIV_2a_gdf/`, and the true labels `A01T.mat` and `A01E.mat` in `true_labels/`. Then:
+Download from the [BCI Competition IV page](https://www.bbci.de/competition/iv/) (it is under "Download of data sets" section and download "Data sets 2a") and put `A01T.gdf` and `A01E.gdf` in `BCICIV_2a_gdf/`, and the true labels `A01T.mat` and `A01E.mat` in `true_labels/`. Then:
 
 ```bash
 mkdir -p mymat_raw
